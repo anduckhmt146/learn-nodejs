@@ -7,7 +7,8 @@ const errorHandler = require('./middlewares/errorHandler.js');
 
 require('dotenv').config();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
+const mongooseConnect = process.env.MONGO_URI;
 
 // Middleware
 app.use(express.static('./public'));
@@ -21,7 +22,7 @@ app.use(errorHandler);
 // Connect to DB and start server
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI);
+    await connectDB(mongooseConnect);
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });
