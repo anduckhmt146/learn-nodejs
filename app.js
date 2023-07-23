@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
-const taskRouter = require('./routes/tasks.js');
+const taskRouter = require('./routes/task.route.js');
 const connectDB = require('./db/connect.js');
-const notFound = require('./middlewares/not-found.js');
-const errorHandler = require('./middlewares/error.js');
+const notFound = require('./middlewares/notFound.js');
+const errorHandler = require('./middlewares/errorHandler.js');
+
 require('dotenv').config();
 
 const port = 3000;

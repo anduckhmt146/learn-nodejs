@@ -8,7 +8,7 @@ const {
   updateTaskById,
   deleteTaskById,
   editTaskById,
-} = require('../controllers/tasks.js');
+} = require('../controllers/task.controller.js');
 
 //.../api/v1/tasks
 router.route('/').get(getAllTasks).post(createTask);
